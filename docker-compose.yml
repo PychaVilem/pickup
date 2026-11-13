@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    container_name: pickup-db
+    environment:
+      POSTGRES_DB: pickup
+      POSTGRES_USER: pickup
+      POSTGRES_PASSWORD: pickup
+    ports:
+      - "5432:5432"
+    volumes:
+      - pickup-data:/var/lib/postgresql/data
+
+volumes:
+  pickup-data:
